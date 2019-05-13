@@ -37,7 +37,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy-linux": "gatsby build --prefix-paths && cp ./src/CNAME public/ && gh-pages -d public",
+    "deploy-windows": "gatsby build --prefix-paths && robocopy ./src/ public/ CNAME &&gh-pages -d public",
+    "deploy": "node deploy.js"
   },
   "repository": {
     "type": "git",

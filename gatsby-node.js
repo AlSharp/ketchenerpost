@@ -16,7 +16,7 @@ exports.createPages = ({actions, graphql}) => {
                 date
                 title
                 author
-                short_version
+                description
               }
               id
             }

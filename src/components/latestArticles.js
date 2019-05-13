@@ -9,13 +9,13 @@ const _latestArticles = props => {
         props.data.allMarkdownRemark.edges.map(article => {
           const {
             id, 
-            frontmatter: {title, date, author, short_version, path}
+            frontmatter: {title, date, author, description, path}
           } = article.node;
           return (
             <div key={id} className="latest-article">
               <h3>{title}</h3>
               <div>
-                {short_version} <Link to={path}>Read more</Link>
+                {description} <Link to={path}>Read more</Link>
               </div>
               <p>By {author} on {date}</p>
             </div>

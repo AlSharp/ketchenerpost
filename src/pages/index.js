@@ -23,7 +23,7 @@ export const pageQuery = graphql`
             date
             title
             author
-            short_version
+            description
           }
           id
         }

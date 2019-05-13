@@ -20,13 +20,17 @@ const Template = props => {
     frontmatter: {
       title,
       date,
-      author
+      author,
+      description
     }
   } = props.data.markdownRemark;
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO
+        title={title}
+        description={description}
+      />
       <Link to="/">Go Back</Link>
       <h1>{title}</h1>
       <InnerHTML html={html} />
@@ -41,9 +45,10 @@ export const ArticleQuery = graphql`
       html
       frontmatter {
         path
+        date
         title
         author
-        date
+        description
       }
     }
   }
