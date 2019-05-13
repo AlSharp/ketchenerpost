@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/ketchenerpost',
   siteMetadata: {
     title: `Ketchener Post`,
     description: `This is awesome website with news articles`,
@@ -11,6 +12,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        // path: `${path.join(__dirname, 'src', 'images')}`
       },
     },
     {
@@ -18,6 +20,7 @@ module.exports = {
       options: {
         name: `articles`,
         path: `${__dirname}/src/pages/articles`,
+        // path: `${path.join(__dirname, 'src', 'pages', 'articles')}`
       },
     },
     `gatsby-transformer-sharp`,
