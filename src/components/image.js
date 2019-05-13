@@ -17,16 +17,22 @@ const Image = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+        placeholderImage: file(relativePath: { eq: "ketchener-icon.png" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data =>
+      <Img
+        fixed={data.placeholderImage.childImageSharp.fixed}
+        style={{marginRight: 10}}
+        imgStyle={{margin: 0}}
+      />
+    }
   />
 )
 export default Image
