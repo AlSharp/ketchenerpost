@@ -11,7 +11,7 @@ const _latestArticles = props => {
             id, 
             frontmatter: {
               title, date, author, description, path,
-              img: {
+              cover_image: {
                 publicURL,
                 childImageSharp: {sizes: {srcSet}}
               }
@@ -19,7 +19,9 @@ const _latestArticles = props => {
           } = article.node;
           return (
             <div key={id} className="top-article">
-              <h3>{title}</h3>
+              <h3>
+                <Link to={path}>{title}</Link>
+              </h3>
               <div>
                 <div>
                   <img src={publicURL} />
@@ -50,9 +52,16 @@ const latestArticles = styled(_latestArticles)`
       font-size: 1.4rem;
       margin-bottom: 12px;
     };
+    & > .top-article > h3 > a {
+      color: #2f4371;
+      text-decoration: none;
+    };
+    & > .top-article > h3 > a:hover {
+      color: #546790;
+    }
     & > .top-article > div {
       display: flex;
-    }
+    };
     & > .top-article > div > div:first-child > img {
       max-height: 200px;
       max-width: 200px;
@@ -62,14 +71,21 @@ const latestArticles = styled(_latestArticles)`
     };
     & > .top-article > div > div:last-child {
       margin-left: 12px;
-    }
+    };
     & > .top-article > p {
       font-size: 14px;
       margin-bottom: 6px;
       text-align: right;
-    }
+    };
   };
   @media (max-width: 979px) {
+    & > .top-article > h3 > a {
+      color: #2f4371;
+      text-decoration: none;
+    };
+    & > .top-article > h3 > a:hover {
+      color: #546790;
+    }
     & > .top-article {
       border-bottom: 1px solid #ccc;
       margin-bottom: 6px;

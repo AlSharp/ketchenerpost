@@ -24,7 +24,7 @@ export const pageQuery = graphql`
             title
             author
             description
-            img {
+            cover_image {
               publicURL
               childImageSharp {
                 sizes(maxWidth: 1240) {
