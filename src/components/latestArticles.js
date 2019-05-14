@@ -6,16 +6,30 @@ const _latestArticles = props => {
   return (
     <div className={props.className}>
       {
-        props.data.allMarkdownRemark.edges.map(article => {
+        props.articles.map(article => {
           const {
             id, 
-            frontmatter: {title, date, author, description, path}
+            frontmatter: {
+              title, date, author, description, path,
+              img: {
+                publicURL,
+                childImageSharp: {sizes: {srcSet}}
+              }
+            }
           } = article.node;
           return (
-            <div key={id} className="latest-article">
+            <div key={id} className="top-article">
               <h3>{title}</h3>
               <div>
-                {description} <Link to={path}>Read more</Link>
+                <div>
+                  <img src={publicURL} />
+                </div>
+                <div>
+                  <div>
+                    {description}
+                  </div>
+                  <Link to={path}>Read more</Link>
+                </div>
               </div>
               <p>By {author} on {date}</p>
             </div>
@@ -27,20 +41,46 @@ const _latestArticles = props => {
 };
 
 const latestArticles = styled(_latestArticles)`
-  & > .latest-article {
-
+  @media (min-width: 980px) {
+    & > .top-article {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 6px;
+    };
+    & > .top-article > h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    };
+    & > .top-article > div {
+      display: flex;
+    }
+    & > .top-article > div > div:first-child > img {
+      max-height: 200px;
+      max-width: 200px;
+      width: auto;
+      height: auto;
+      margin: 0
+    };
+    & > .top-article > div > div:last-child {
+      margin-left: 12px;
+    }
+    & > .top-article > p {
+      font-size: 14px;
+      margin-bottom: 6px;
+      text-align: right;
+    }
   };
-  & > .latest-article > h3 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-  };
-  & > .latest-article > div {
-    margin-bottom: 6px;
-  };
-  & > .latest-article > p {
-    font-size: 14px;
-    margin-bottom: 12px;
+  @media (max-width: 979px) {
+    & > .top-article {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 6px;
+    };
+    & > .top-article > p {
+      font-size: 14px;
+      margin: 6px 0;
+      text-align: right;
+    }
   }
+  
 `;
 
 export default latestArticles;

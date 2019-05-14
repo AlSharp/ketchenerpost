@@ -9,7 +9,7 @@ import LatestArticles from '../components/latestArticles';
 const IndexPage = props => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <LatestArticles data={props.data} />
+    <LatestArticles articles={props.data.allMarkdownRemark.edges} />
   </Layout>
 )
 
@@ -24,6 +24,14 @@ export const pageQuery = graphql`
             title
             author
             description
+            img {
+              publicURL
+              childImageSharp {
+                sizes(maxWidth: 1240) {
+                  srcSet
+                }
+              }
+            }
           }
           id
         }

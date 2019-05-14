@@ -12,13 +12,14 @@ const Header = ({ siteTitle }) => (
   >
     <div
       style={{
+        display: 'flex',
         margin: `0 auto`,
         maxWidth: 960,
         padding: `0.5rem 1.0875rem`
       }}
     >
-      <h1 style={{ margin: 0, fontSize: '1.8rem' }}>
-        <Image />
+      <Image />
+      <h1 style={{ margin: 0, fontSize: '2.2rem', lineHeight: '2.1rem' }}>
         <Link
           to="/"
           style={{

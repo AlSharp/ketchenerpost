@@ -36,7 +36,7 @@ const Layout = ({ children }) => (
         >
           <main>{children}</main>
           <footer>
-            ketchenerpost.com © {new Date().getFullYear()},
+            www.ketchenerpost.com © {new Date().getFullYear()},
             {` `}
             The Ketchener Post
           </footer>
