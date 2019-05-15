@@ -43,11 +43,14 @@ const _latestArticles = props => {
 };
 
 const latestArticles = styled(_latestArticles)`
+  & > .top-article {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 6px;
+  };
+  & > .top-article:last-child {
+    border-bottom: none
+  }
   @media (min-width: 980px) {
-    & > .top-article {
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 6px;
-    };
     & > .top-article > h3 {
       font-size: 1.4rem;
       margin-bottom: 12px;
@@ -86,10 +89,6 @@ const latestArticles = styled(_latestArticles)`
     & > .top-article > h3 > a:hover {
       color: #546790;
     }
-    & > .top-article {
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 6px;
-    };
     & > .top-article > p {
       font-size: 14px;
       margin: 6px 0;
