@@ -3,6 +3,7 @@ module.exports = {
     title: `Ketchener Post`,
     description: `This is awesome website with news articles`,
     author: `Ketchener Post, Inc.`,
+    siteUrl: `https://www.ketchenerpost.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -56,6 +57,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`
     
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
