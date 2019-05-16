@@ -10,6 +10,33 @@ const _innerHTML = props =>
 const InnerHTML = styled(_innerHTML)`
   & > .title-img > span {
     margin: 0;
+  };
+  & > .youtube-wrapper {
+    position: relative;
+    max-width: 560px;
+    max-height: 315px;
+    width: 560px;
+    height: 315px;
+    margin: 0 0 1.45rem 0;
+  }
+
+  & > .youtube-wrapper > iframe {
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 600px) {
+    & > .youtube-wrapper {
+      width: 100%;
+      height: 100%;
+      padding-top: 56.25%;
+    };
+    & > .youtube-wrapper > iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
   }
 `;
 
