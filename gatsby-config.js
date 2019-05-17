@@ -12,7 +12,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-        // path: `${path.join(__dirname, 'src', 'images')}`
       },
     },
     {
@@ -20,7 +19,6 @@ module.exports = {
       options: {
         name: `articles`,
         path: `${__dirname}/src/pages/articles`,
-        // path: `${path.join(__dirname, 'src', 'pages', 'articles')}`
       },
     },
     `gatsby-transformer-sharp`,
@@ -57,7 +55,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-netlify-cms`
     
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
