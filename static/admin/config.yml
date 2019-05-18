@@ -9,12 +9,14 @@ media_folder: "images/uploads"
 collections:
   - name: "article"
     label: "Article"
-    folder: "articles"
+    folder: "articles/article"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { name: path, label: Path }
-      - { name: date, label: Date, widget: Date }
+      - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - { name: description, label: Description, widget: Markdown }
-      - { name: cover_image, label: Cover Image, widget: Image }
+      - { name: description, label: Description, widget: markdown }
+      - { name: cover_image, label: Cover Image, widget: image }
       - { name: author, label: Author }
+      - { name: body, label: Text, widget: markdown }
