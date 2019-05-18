@@ -1,16 +1,20 @@
 backend:
-  name: test-repo
+  name: github
+  repo: alsharp/alsharp.github.io/ketchenerpost
+  branch: gh-pages
+  site_domain: hopeful-morse-646b24.netlify.com
 
-media_folder: static/assets
-public_folder: assets
+media_folder: "images/uploads"
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: "article"
+    label: "Article"
+    folder: "articles"
     create: true
     fields:
       - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
+      - { name: date, label: Date, widget: Date }
       - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { name: description, label: Description, widget: Markdown }
+      - { name: cover_image, label: Cover Image, widget: Image }
+      - { name: author, label: Author }
