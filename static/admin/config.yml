@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: alsharp/alsharp.github.io/ketchenerpost
+  repo: alsharp/ketchenerpost
   branch: gh-pages
   site_domain: hopeful-morse-646b24.netlify.com
 
